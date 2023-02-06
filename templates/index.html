@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+  .my-border {
+    width: 300px;
+    height: auto;
+    padding: 20px;
+    border: 2px solid black;
+  }
+  .error {
+  	color: red;
+  }
+</style>
+</head>
+<body>
+    <div align="center">
+	<div style="background: beige"><h1>Welcome User!</h1></div>
+	<div style="color: blue"><h2> Login Page</h2></div>
+        <div>
+            <form class="my-border" action="{{url_for('login')}}" method="POST">
+		<div class="error"><h3>{{ message }} </h3></div><br>
+                <label>Username : </label><input id="username" name="username" type="text" placeholder="User Name" autocomplete="off"/> <br><br>
+                <label>Password : </label><input id="password" name="password" type="password" placeholder="Password" autocomplete="off"/> <br><br>
+                <button id="submit" name="submit">Sign in</button>
+            </form>
+        </div>
+        <p>Don't have an account? Click <a href="{{url_for('registration')}}">here</a> to create one</p>
+    </div>
+</body>
+</html>
